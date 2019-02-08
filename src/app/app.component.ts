@@ -17,10 +17,10 @@ export class AppComponent {
     this.items = [
       { name: 'assets/images/con-te-logo.svg' },
       { name: 'assets/images/Oracle_logo.png' },
-      { name: 'assets/images/skaffolder_logo.jpg' },
+      { name: 'assets/images/skaff_logo.jpg' },
       { name: 'assets/images/con-te-logo.svg' },
       { name: 'assets/images/Oracle_logo.png' },
-      { name: 'assets/images/skaffolder_logo.jpg' }
+      { name: 'assets/images/skaff_logo.jpg' }
     ];
   }
 
