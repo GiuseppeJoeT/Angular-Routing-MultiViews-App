@@ -1,7 +1,53 @@
-<!-- app.component.HTML -->
-<!-- <app-catalog></app-catalog>
-<app-contacts></app-contacts> -->
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
 
-<!-- <router-outlet></router-outlet> -->
+<h3>Input, <em>Template reference variable</em>, Keyboard events</h3>
+
+<form>
+  <input type="text"
+        placeholder="Add User name"
+        #nameRefVar
+        required>
+
+  <input type="text"
+        placeholder="Add Age"
+        #ageRefVar
+        required>
+
+  <button (click)="add(nameRefVar, ageRefVar)">ADD</button>
+</form>
+
+<li *ngFor="let user of users">
+  {{ user.name }} {{ user.age }}
+</li>
+
+<hr>
+
+<div id="container">
+  <div ng2-carouselamos class="slides-wrapper"
+    [items]="items"
+    [width]="900"
+    [$prev]="prev"
+    [$next]="next"
+    [$item]="item">
+  </div>
+
+  <ng-template #prev>
+      <img src="assets/images/left-arrow.png" id="leftArrow">
+  </ng-template>
+
+  <ng-template #next>
+    <img src="assets/images/right-arrow.png" id="rightArrow">
+  </ng-template>
+
+  <ng-template #item let-item let-i="index">
+
+    <div class="items" >
+      <img src="{{ item.name }}" width="300px" height="300px" >
+    </div>
+
+  </ng-template>
 
 
+
+</div> <!-- close container -->
