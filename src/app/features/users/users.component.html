@@ -1,0 +1,6 @@
+<h2>Users component</h2>
+<hr>
+<li *ngFor="let user of users" [routerLink]="['/users', user.id]">
+  {{ user.name }}
+</li>
+
