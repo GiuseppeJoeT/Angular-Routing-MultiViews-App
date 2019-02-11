@@ -1,0 +1,8 @@
+<div *ngIf="user">
+  <!-- oggetto user con pipe json -->
+  <pre>{{ user | json }}</pre>
+  <hr>
+  <!-- ? safe operator -->
+  <pre>{{ user?.name}}</pre>
+  <pre>{{ user?.email }}</pre>
+</div>
