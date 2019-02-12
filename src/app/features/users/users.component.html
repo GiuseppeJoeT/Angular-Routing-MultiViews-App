@@ -1,6 +1,13 @@
 <h2>Users component</h2>
 <hr>
-<li *ngFor="let user of users" [routerLink]="['/users', user.id]">
-  {{ user.name }}
-</li>
+<!-- finchè non arrivano dati utente mostra loading -->
+<div *ngIf="!users; else success">Loading...</div>
+
+<!-- contenuto renderizzato dinamicamente -->
+<ng-template #success>
+  <li *ngFor="let user of users" [routerLink]="['/users', user.id]">
+    {{ user.name }}
+  </li>
+</ng-template>
+<hr>
 
