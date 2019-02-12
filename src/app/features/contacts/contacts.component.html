@@ -1,3 +1,7 @@
-<p>
-  contacts works!
-</p>
+<div id="contactUsers">
+  <li *ngFor="let user of contactUsers"
+  [class]="user.gender === 'M' ? 'male' : 'female' ">
+  <!-- oppure [class.female]="user.gender === 'F'" -->
+    {{ user.name }}
+  </li>
+</div>

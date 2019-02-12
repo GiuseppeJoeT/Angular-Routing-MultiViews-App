@@ -1,0 +1,14 @@
+#contactUsers {
+  margin: 50px 20px;
+  font-size: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.male {
+  background-color: blue;
+  color: white;
+}
+
+.female {
+  background-color: pink;
+}
