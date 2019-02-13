@@ -1,19 +1,11 @@
-<!-- <h3>Input, <em>Template reference variable</em>, Keyboard events</h3>
-
-<form>
-  <input type="text"
-        placeholder="Add User name"
-        #nameRefVar
-        required>
-
-  <input type="text"
-        placeholder="Add Age"
-        #ageRefVar
-        required>
-
-  <button (click)="add(nameRefVar, ageRefVar)">ADD</button>
-</form>
-
-<li *ngFor="let user of users">
-  {{ user.name }} {{ user.age }}
-</li> -->
+<div class="boxMargins">
+    <h3>La direttiva ngModel: 1way vs 2 way binding</h3>
+    <input type="text"
+           placeholder="Username (minimo 3 caratteri)"
+           [(ngModel)]="label"
+    >
+      <!-- {{ label }} -->
+      <br>
+      <small *ngIf="label.length < 3"
+       [style.color]="'red'">Campo label troppo corto!</small>
+ </div>
