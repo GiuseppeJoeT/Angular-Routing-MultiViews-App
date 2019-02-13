@@ -7,24 +7,12 @@ import { Component } from '@angular/core';
 })
 export class CatalogComponent {
 
+  label = 'Username';
+
   constructor() {
-  //   users = [];
-
-  //   add(inputName: HTMLInputElement, inputAge: HTMLInputElement) {
-  //     // inviare all'array nuovo valore
-  //     this.users.push({
-  //       name: inputName.value,
-  //       age: inputAge.value
-  //     });
-
-  //     // pulire campo input dopo invio
-  //     inputName.value = '';
-  //     inputAge.value = '';
-
-  //     // focus su input dopo click bottone
-  //     inputName.focus();
-  //   }
+    setTimeout(() => {
+      this.label = '(minimo 3 caratteri)';
+    }, 2000);
   }
-
 
 }
