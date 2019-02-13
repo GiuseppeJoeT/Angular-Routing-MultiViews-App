@@ -1,21 +1,36 @@
 <app-navbar></app-navbar>
 <router-outlet></router-outlet>
 
-<h3>Input, <em>Template reference variable</em>, Keyboard events</h3>
+<hr>
+<div class="boxMargins">
+  <h1>Bootstrap 4 Test</h1>
+  <div class="card">
+    <div class="card-header">Bootstrap card-header class</div>
+    <div class="card-body">Bootstrap card-body class</div>
+  </div>
 
-<form>
-  <input type="text"
-        placeholder="Add User name"
-        #nameRefVar
-        required>
+  <button class="btn btn-primary">
+    <i class="fa fa-times"></i>
+      CLOSE
+  </button>
+</div>
 
-  <input type="text"
-        placeholder="Add Age"
-        #ageRefVar
-        required>
+<div class="boxMargins">
+  <h3>Input, <em>Template reference variable</em>, Keyboard events</h3>
+  <form>
+    <input type="text"
+          placeholder="Add User name"
+          #nameRefVar
+          required>
 
-  <button (click)="add(nameRefVar, ageRefVar)">ADD</button>
-</form>
+    <input type="text"
+          placeholder="Add Age"
+          #ageRefVar
+          required>
+
+    <button (click)="add(nameRefVar, ageRefVar)">ADD</button>
+  </form>
+</div>
 
 <li *ngFor="let user of users">
   {{ user.name }} {{ user.age }}
@@ -23,7 +38,8 @@
 
 <hr>
 
-<div id="container">
+<!-- Carousel -->
+<div id="containerCarousel">
   <div ng2-carouselamos class="slides-wrapper"
     [items]="items"
     [width]="900"
@@ -50,4 +66,4 @@
 
 
 
-</div> <!-- close container -->
+</div> <!-- close #container -->
