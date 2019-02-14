@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from './user.interface';
+import { User } from '../../model/user.interface';
 
 @Component({
   selector: 'app-users',
@@ -17,7 +17,7 @@ export class UsersComponent {
       http.get<any[]>('https://jsonplaceholder.typicode.com/users')
         .subscribe(result => this.users = result);
 
-    }, 3000);
+    }, 2500);
   }
 
 }
