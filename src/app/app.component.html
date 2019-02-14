@@ -16,26 +16,36 @@
 </div>
 
 <div class="boxMargins">
-  <h3>Input, <em>Template reference variable</em>, Keyboard events</h3>
+  <h3>Crea lista di utenti </h3>
+  <h6><em>Template reference variable</em></h6>
   <form>
-    <input type="text"
+    <input type="text" class="form-control-sm"
           placeholder="Add User name"
           #nameRefVar
           required>
 
-    <input type="text"
-          placeholder="Add Age"
+    <input type="number" class="form-control-sm"
+          placeholder="Age"
           #ageRefVar
+          min="1" max="120"
           required>
 
-    <button (click)="add(nameRefVar, ageRefVar)">ADD</button>
+    <input type="text" class="form-control-sm"
+           placeholder="Add city"
+           #cityRefVar
+           required>
+
+    <button (click)="add(nameRefVar, ageRefVar, cityRefVar)"
+            class="btn btn-dark">
+            ADD
+    </button>
   </form>
+
+
+  <li *ngFor="let user of users">
+    {{ user.name }} {{ user.age }} {{ user.city }}
+  </li>
 </div>
-
-<li *ngFor="let user of users">
-  {{ user.name }} {{ user.age }}
-</li>
-
 <hr>
 
 <!-- Carousel -->
