@@ -1,6 +1,7 @@
 // import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
@@ -27,6 +28,7 @@ import { UserService } from './services/user.service';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     AppRoutingModule,
     Ng2CarouselamosModule
@@ -38,7 +40,6 @@ import { UserService } from './services/user.service';
     // ])
   ],
   providers: [
-    Utility,
     UserService
   ],
   bootstrap: [AppComponent]
