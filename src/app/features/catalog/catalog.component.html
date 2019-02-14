@@ -1,5 +1,42 @@
 <div class="boxMargins">
-    <h3>La direttiva ngModel: 1way vs 2 way binding</h3>
+    <h3>ngForm, ngModel e gestione data model</h3>
+    <form #valInput="ngForm" (submit)="add(valInput)">
+      <input type="text"
+            placeholder="User name"
+            [ngModel]="utente?.name"
+            name="name">
+
+      <input type="number"
+      placeholder="Age"
+      [ngModel]="utente?.age"
+      name="age">
+
+      <input type="text"
+      placeholder="City"
+      [ngModel]="utente?.city"
+      name="city">
+
+      <input type="text"
+      placeholder="color"
+      [ngModel]="utente?.color"
+      name="color">
+
+      <button type="submit">
+        {{ utente ? 'EDIT' : 'ADD'}}
+      </button>
+  </form>
+  <li *ngFor="let utente of utenti"
+      (click)="setActive(utente)"
+      [style.background]="utente.color">
+    {{ utente.name }} - {{ utente.age }} - {{ utente.city }} - {{utente.color }}
+  </li>
+</div>
+
+<!-- 1way vs 2 way binding -->
+<div class=boxMargins>
+    <h3>ngModel: 1way vs 2 way binding</h3>
+    <p>La direttiva <mark>ngModel</mark> ci permette di sincronizzare
+    una <i>proprietà</i>  con un determinato campo di <i>input</i>.</p>
     <input type="text"
            placeholder="Username (minimo 3 caratteri)"
            [(ngModel)]="label"
@@ -8,4 +45,5 @@
       <br>
       <small *ngIf="label.length < 3"
        [style.color]="'red'">Campo label troppo corto!</small>
- </div>
+</div>
+
