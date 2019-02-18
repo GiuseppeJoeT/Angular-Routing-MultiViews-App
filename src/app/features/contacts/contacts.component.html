@@ -1,7 +1,51 @@
+<div class="boxMargins">
+  <h1>Styling</h1>
+</div>
+
 <div id="contactUsers">
+  <h3>Inline CSS class</h3>
   <li *ngFor="let user of contactUsers"
   [class]="user.gender === 'M' ? 'male' : 'female' ">
   <!-- oppure [class.female]="user.gender === 'F'" -->
     {{ user.name }}
   </li>
+</div>
+
+<div class="boxMargins">
+   <h3>La direttiva [ngClass]</h3>
+   <li *ngFor="let user of contactUsers"
+   [ngClass]="{
+     'male':true,
+     'female': user.gender === 'F'
+   }">
+      {{ user.name }}
+   </li>
+</div>
+
+<div class="boxMargins">
+    <h3>La direttiva [ngClass]: applicare classi css invocando un metodo</h3>
+    <li *ngFor="let user of contactUsers"
+    [ngClass]="getFemaleBiggerFont(user)">
+      {{ user.name }}
+    </li>
+</div>
+
+<div class="boxMargins">
+    <h3>Inline Styling: attributo [style]</h3>
+    <li *ngFor="let user of contactUsers"
+    [style.color]="user.gender === 'M' ? 'white' : 'null'"
+    [style.backgroundColor]="user.gender === 'M' ? 'blue' : 'pink'"
+    [style.fontSize]="user.gender === 'M' ? '40px' : '20px' "
+    >
+      {{ user.name }}
+    </li>
+</div>
+
+<div class="boxMargins">
+    <h3>La direttiva [ngStyle]</h3>
+    <li *ngFor="let user of contactUsers"
+    [ngStyle]="getStyle(user)"
+    >
+      {{ user.name }}
+    </li>
 </div>
