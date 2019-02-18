@@ -24,26 +24,5 @@ export class AppComponent {
     ];
   }
 
-  users = [];
-
-  // Input, Template reference variable,
-  add(inputName: HTMLInputElement, inputAge: HTMLInputElement, inputCity: HTMLInputElement) {
-    // inviare all'array nuovo valore
-    this.users.push({
-      name: inputName.value,
-      age: inputAge.value,
-      city: inputCity.value
-    });
-
-    // pulire campo input dopo invio
-    inputName.value = '';
-    inputAge.value = '';
-    inputCity.value = '';
-
-    // focus su input dopo click bottone
-    inputName.focus();
-  }
-
-
 
 }
