@@ -12,9 +12,8 @@ import { ContactsComponent } from './features/contacts/contacts.component';
 import { NavbarComponent } from './core/navbar/navbar.component';
 import { UsersComponent } from './features/users/users.component';
 import { UserDetailsComponent } from './features/user-details/user-details.component';
-
-import { Utility } from './features/users/services/utility';
-import { UserService } from './services/user.service';
+import { UserService } from './core/services/user.service';
+import { FormValidationComponent } from './features/form-validation/form-validation.component';
 
 
 @NgModule({
@@ -24,7 +23,8 @@ import { UserService } from './services/user.service';
     ContactsComponent,
     NavbarComponent,
     UsersComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    FormValidationComponent
   ],
   imports: [
     BrowserModule,
