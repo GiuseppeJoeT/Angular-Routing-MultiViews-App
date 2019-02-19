@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { User } from '../../model/user.interface'
 
 @Component({
   selector: 'app-catalog',
@@ -16,20 +15,24 @@ export class CatalogComponent {
     }, 2000);
   }
 
-  // ngForm, ngModel e gestione data model
-  utente: User;
+  users = [];
 
-  utenti = [
-    { name: 'Joe', age: 32, city: 'Rome' }
-  ];
+  // Input, Template reference variable,
+  add(inputName: HTMLInputElement, inputAge: HTMLInputElement, inputCity: HTMLInputElement) {
+    // inviare all'array nuovo valore
+    this.users.push({
+      name: inputName.value,
+      age: inputAge.value,
+      city: inputCity.value
+    });
 
-  add(form) {
-    // console.log(form.value);
-    this.utenti.push(form.value);
-  }
+    // pulire campo input dopo invio
+    inputName.value = '';
+    inputAge.value = '';
+    inputCity.value = '';
 
-  setActive(utente: User) {
-    this.utente = utente;
+    // focus su input dopo click bottone
+    inputName.focus();
   }
 
 }
