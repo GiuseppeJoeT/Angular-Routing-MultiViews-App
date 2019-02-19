@@ -1,36 +1,34 @@
 <div class="boxMargins">
-    <h3>ngForm, ngModel e gestione data model</h3>
-    <form #valInput="ngForm" (submit)="add(valInput)">
-      <input type="text"
-            placeholder="User name"
-            [ngModel]="utente?.name"
-            name="name">
+    <h4>Crea lista di utenti </h4>
+    <h6><em>Template reference variable</em></h6>
+    <form>
+      <input type="text" class="form-control-sm"
+            placeholder="Add User name"
+            #nameRefVar
+            required>
 
-      <input type="number"
-      placeholder="Age"
-      [ngModel]="utente?.age"
-      name="age">
+      <input type="number" class="form-control-sm"
+            placeholder="Age"
+            #ageRefVar
+            min="1" max="120"
+            required>
 
-      <input type="text"
-      placeholder="City"
-      [ngModel]="utente?.city"
-      name="city">
+      <input type="text" class="form-control-sm"
+            placeholder="Add city"
+            #cityRefVar
+            required>
 
-      <input type="text"
-      placeholder="color"
-      [ngModel]="utente?.color"
-      name="color">
-
-      <button type="submit">
-        {{ utente ? 'EDIT' : 'ADD'}}
+      <button (click)="add(nameRefVar, ageRefVar, cityRefVar)"
+              class="btn btn-dark">
+              ADD
       </button>
-  </form>
-  <li *ngFor="let utente of utenti"
-      (click)="setActive(utente)"
-      [style.background]="utente.color">
-    {{ utente.name }} - {{ utente.age }} - {{ utente.city }} - {{utente.color }}
-  </li>
-</div>
+    </form>
+
+
+    <li *ngFor="let user of users">
+      {{ user.name }} {{ user.age }} {{ user.city }}
+    </li>
+  </div>
 
 <!-- 1way vs 2 way binding -->
 <div class=boxMargins>
