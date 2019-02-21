@@ -1,0 +1,62 @@
+<div class="boxMargins">
+      <!-- <p>Let's <strong>test</strong>  the form below</p>
+      <pre>
+        {{ formRef.value | json }}
+      </pre>
+      <p>is the field <mark>dirty</mark>?</p>
+      <pre> {{ formRef.dirty }} </pre>
+
+      <p>is the field <mark>valid</mark>?</p>
+      <pre> {{ formRef.valid }} </pre>
+
+      <p>was the field <mark>touched</mark>?</p>
+      <pre> {{ formRef.touched }} </pre> -->
+      <div *ngIf="nameRef.errors">
+        <div *ngIf="nameRef.errors.required"
+        [style.color]="'red'">Il campo <strong>Username</strong> è obbligatorio</div>
+        <div *ngIf="nameRef.errors.minlength"
+        [style.color]="'red'">
+          Nome troppo corto. Mancano {{ nameRef.errors.minlength.requiredLength - nameRef.errors.minlength.actualLength }} caratteri.
+        </div>
+      </div>
+
+      <h3>ngForm, ngModel e Form validation</h3>
+      <form #formRef="ngForm" (submit)="add(formRef)">
+        <input type="text"
+              placeholder="User name"
+              [ngModel]="utente?.name"
+              name="name"
+              #nameRef="ngModel"
+              required
+              minlength="3"
+              [ngClass]="{'error': nameRef.invalid && nameRef.touched}">
+
+        <input type="number"
+        placeholder="Age"
+        [ngModel]="utente?.age"
+        name="age"
+        #ageRef="ngModel"
+        required
+        [ngClass]="{'error': nameRef.invalid && nameRef.touched}">
+
+        <input type="text"
+        placeholder="City"
+        [ngModel]="utente?.city"
+        name="city">
+
+        <input type="text"
+        placeholder="color"
+        [ngModel]="utente?.color"
+        name="color">
+
+        <button type="submit" class="btn btn-primary"
+        [disabled]="formRef.invalid">
+          {{ utente ? 'EDIT' : 'ADD'}}
+        </button>
+    </form>
+    <li *ngFor="let utente of utenti"
+        (click)="setActive(utente)"
+        [style.background]="utente.color">
+      {{ utente.name }} - {{ utente.age }} - {{ utente.city }} - {{utente.color }}
+    </li>
+</div>
