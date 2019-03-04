@@ -33,7 +33,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 Ng2-carouselamos is a simple carousel/slider which just use css transitions to do the work
 
 ### Demo
-![Demo](2017-06-29_18-02-13.gif)
+![Demo](http://ng-raw-multi-views.surge.sh/)
 
 ### Getting started
 - Install node package:
