@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { Component, Input } from '@angular/core';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +11,24 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'MultiView-AngularRouter';
 
+  @Input() username = 'Joe';
+
   // Carousel
   items: Array<any> = [];
 
-  constructor( ) {
+  // Router Events log + RxJs operators
+  constructor( router: Router ) {
+    router.events
+      // .pipe() è un metodo speciale
+      .pipe(
+        // operatore .filter()
+        filter(event => event instanceof NavigationEnd)
+      )
+      .subscribe((event: NavigationEnd) => {
+        // log fasi ciclo di vita Router
+        console.log(event.url);
+      });
+
     // Carousel
     this.items = [
       { name: 'assets/images/con-te-logo.svg' },
@@ -22,7 +38,7 @@ export class AppComponent {
       { name: 'assets/images/Oracle_logo.png' },
       { name: 'assets/images/skaffolder_logo.jpg' }
     ];
-  }
+  } // chiudi constructor
 
 
 }
